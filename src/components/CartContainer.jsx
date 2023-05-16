@@ -14,9 +14,11 @@ function CartContainer() {
       <div className="main-heading">
         <h1 className="heading">Your Bag</h1>
     </div>
+    <div className="parent">
       {cartItems.map((item) => {
     return <CartItem {...item} key={item.id} />
       })}
+      </div>
     </div>
     <div className="bottomline"></div>
     <footer className="total-container">
