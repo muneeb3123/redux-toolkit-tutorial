@@ -5,7 +5,7 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { increaseItem, removeItem, decreaseItem} from '../features/cart/cartslice';
 
-function CartItem({img ,title, price,id,quantity}) {
+function CartItem({img ,title, price,id,amount}) {
   const dispatch = useDispatch();
   return (
     <>
@@ -19,9 +19,9 @@ function CartItem({img ,title, price,id,quantity}) {
             </div>
             <div className="quantity-container">
           <ArrowDropUpIcon onClick={() => dispatch(increaseItem(id))}/>
-          <p className="quantity">{quantity}</p>
+          <p className="quantity">{amount}</p>
           <ArrowDropDownIcon  onClick={() => {
-            if(quantity === 1){
+            if(amount === 1){
               return dispatch(removeItem(id));
             }
             dispatch(decreaseItem(id))

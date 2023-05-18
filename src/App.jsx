@@ -3,7 +3,7 @@ import Modal from "./modal"
 import Navbar from "./components/Navbar"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { calculateTotal } from "./features/cart/cartslice"
+import { calculateTotal,getItems } from "./features/cart/cartslice"
 
 function App() {
 const dispatch = useDispatch()
@@ -13,6 +13,10 @@ const {isOpen} = useSelector((state) => state.modal)
 useEffect(() => {
 dispatch(calculateTotal())
 }, [cartItems])
+
+useEffect(() => {
+  dispatch(getItems())
+}, [])
 
   return (
     <>

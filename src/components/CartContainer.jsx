@@ -7,7 +7,17 @@ import { openModal } from '../features/modal/modalslice';
 
 function CartContainer() {
   const dispatch = useDispatch();
-  const {cartItems,total} = useSelector((state) => state.cart)
+  const {cartItems,total,isLoading} = useSelector((state) => state.cart)
+
+  if(isLoading){
+    return(
+      <div className="loading">
+        <h1>loading....</h1>
+      </div>
+    )
+  }
+  
+
   return (
     <>
     <div className='containers'>
