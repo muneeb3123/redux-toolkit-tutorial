@@ -16,7 +16,7 @@ export const getItems = createAsyncThunk('cart/getCartItems', async() => {
     return response.data;
 
   } catch (error) {
-    console.error('Error retrieving data:', error.message);
+    console.error('Error retrieving data:');
   }
 })
 
